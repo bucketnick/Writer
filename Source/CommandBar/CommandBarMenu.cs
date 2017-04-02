@@ -1,39 +1,39 @@
 namespace Writer.Forms
 {
-	using System;
-	using System.ComponentModel;
+    using System;
+    using System.ComponentModel;
 
-	[DesignTimeVisible(false), ToolboxItem(false)]
-	public class CommandBarMenu : CommandBarItem
-	{
-		public event EventHandler DropDown;
-		private CommandBarItemCollection items = new CommandBarItemCollection();
+    [DesignTimeVisible(false), ToolboxItem(false)]
+    public class CommandBarMenu : CommandBarItem
+    {
+        public event EventHandler DropDown;
+        private CommandBarItemCollection items = new CommandBarItemCollection();
 
-		public CommandBarMenu() : base("None")
-		{
-		}
+        public CommandBarMenu() : base("None")
+        {
+        }
 
-		public CommandBarMenu(string text) : base(text)
-		{
-		}
+        public CommandBarMenu(string text) : base(text)
+        {
+        }
 
-		[TypeConverter(typeof(ExpandableObjectConverter)), DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
-		public CommandBarItemCollection Items
-		{
-			get { return this.items; }
-		}
+        [TypeConverter(typeof(ExpandableObjectConverter)), DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
+        public CommandBarItemCollection Items
+        {
+            get { return this.items; }
+        }
 
-		protected virtual void OnDropDown(EventArgs e)
-		{
-			if (this.DropDown != null)
-			{
-				this.DropDown(this, e);
-			}
-		}
+        protected virtual void OnDropDown(EventArgs e)
+        {
+            if (this.DropDown != null)
+            {
+                this.DropDown(this, e);
+            }
+        }
 
-		internal void PerformDropDown(EventArgs e)
-		{
-			this.OnDropDown(e);
-		}
-	}
+        internal void PerformDropDown(EventArgs e)
+        {
+            this.OnDropDown(e);
+        }
+    }
 }
