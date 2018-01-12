@@ -23,6 +23,7 @@ namespace Writer
         [STAThread()]   
         public static void Main(string[] arguments)
         {
+            //here is the my update
             System.Windows.Forms.Application.EnableVisualStyles();
             new Application().Run();
         }
