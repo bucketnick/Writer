@@ -23,7 +23,7 @@ namespace Writer
         [STAThread()]   
         public static void Main(string[] arguments)
         {
-            //here is the my update v1
+            //here is the my update v2
             System.Windows.Forms.Application.EnableVisualStyles();
             new Application().Run();
         }
